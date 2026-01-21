@@ -82,7 +82,6 @@ The application runs under the **`enterprise-apps`** Argo CD project.
 - Auto namespace creation enabled
 - Self-heal and prune enabled
 
-```yaml
 syncPolicy:
   automated:
     prune: true
