@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yourinfo
+  labels:
+    app.kubernetes.io/name: yourinfo
+    app.kubernetes.io/instance: yourinfo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: yourinfo
+      app.kubernetes.io/instance: yourinfo
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: yourinfo
+        app.kubernetes.io/instance: yourinfo
+    spec:
+      containers:
+      - name: yourinfo
+        image: smileshosting/yourinfo:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+

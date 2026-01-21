@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: enterprise-apps
+  namespace: argocd
+spec:
+  description: Project for YourInfo application (single environment)
+
+  # Allow Git repositories
+  sourceRepos:
+  - '*'
+
+  # Allowed destinations
+  destinations:
+  # Argo CD control plane (Applications live here)
+  - namespace: argocd
+    server: https://kubernetes.default.svc
+
+  # Application runtime namespace
+  - namespace: yourinfo
+    server: https://kubernetes.default.svc
+
+  # Allow all namespace-scoped resources (Deployment, Service, Ingress, etc.)
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+
+  # Allow required cluster-scoped resources (IngressClass, ClusterIssuer, etc.)
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+

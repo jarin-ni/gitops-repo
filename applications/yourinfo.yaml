@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: yourinfo
+  namespace: argocd
+spec:
+  project: enterprise-apps
+  source:
+    repoURL: https://github.com/jarin-ni/gitops-repo
+    targetRevision: main
+    path: environments/yourinfo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: yourinfo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+

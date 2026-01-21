@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: yourinfo
+spec:
+  selector:
+    app.kubernetes.io/name: yourinfo
+    app.kubernetes.io/instance: yourinfo
+  ports:
+  - port: 80
+    targetPort: 80
+
