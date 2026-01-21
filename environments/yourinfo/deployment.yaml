@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: yourinfo
-        image: smileshosting/yourinfo:latest
+        image: smileshosting/yourinfo:v1.0.1
         imagePullPolicy: Always
         ports:
         - containerPort: 80
