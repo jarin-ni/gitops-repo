@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
       - name: yourinfo
-        image: smileshosting/yourinfo:v1.0.1
-        imagePullPolicy: Always
+        image: smileshosting/yourinfo:1.0.1
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         readinessProbe:
