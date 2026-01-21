@@ -22,7 +22,7 @@ to Kubernetes and expose it securely via **Traefik + Let’s Encrypt**.
 
 ## 🧠 Architecture Overview
 
-
+```
 Argo CD (namespace: argocd)
 └── Application: yourinfo
 └── Namespace: yourinfo
@@ -30,6 +30,7 @@ Argo CD (namespace: argocd)
 ├── Service (ClusterIP)
 └── Ingress (Traefik + TLS)
 
+```
 - Argo CD manages **all Kubernetes resources**
 - Git is the **single source of truth**
 - No manual `kubectl apply` in runtime namespaces
@@ -38,6 +39,7 @@ Argo CD (namespace: argocd)
 
 ## 📁 Repository Structure
 
+```
 .
 ├── applications/
 │ └── yourinfo.yaml # Argo CD Application
@@ -50,6 +52,7 @@ Argo CD (namespace: argocd)
 │
 └── README.md
 
+```
 
 ---
 
