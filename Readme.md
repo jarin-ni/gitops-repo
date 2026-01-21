@@ -21,12 +21,11 @@ to Kubernetes and expose it securely via **Traefik + Let’s Encrypt**.
 ---
 
 ## 🧠 Architecture Overview
-## Architecture Overview
 
 ```text
 Argo CD (namespace: argocd)
-`-- Application: yourinfo
-    `-- Namespace: yourinfo
+-- Application: yourinfo
+    -- Namespace: yourinfo
         |-- Deployment (Docker image: smileshosting/yourinfo)
         |-- Service (ClusterIP)
         `-- Ingress (Traefik + TLS)
