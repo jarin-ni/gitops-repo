@@ -85,6 +85,7 @@ The application runs under the **`enterprise-apps`** Argo CD project.
 - Auto namespace creation enabled
 - Self-heal and prune enabled
 
+```
 syncPolicy:
   automated:
     prune: true
@@ -92,6 +93,7 @@ syncPolicy:
   syncOptions:
   - CreateNamespace=true
 
+```
 🌍 Ingress & TLS
 
 Ingress controller: Traefik
@@ -106,21 +108,22 @@ https://yourinfo.smileshosting.com
 DNS must point to the Kubernetes public IP.
 
 🔍 Verification Commands
+```
 kubectl get app -n argocd
 kubectl get pods -n yourinfo
 kubectl get svc -n yourinfo
 kubectl get ingress -n yourinfo
 kubectl get certificate -n yourinfo
-
+```
 
 Expected:
-
+```
 Application: Synced / Healthy
 
 Pods: Running
 
 Certificate: READY = True
-
+```
 🧪 Troubleshooting
 Application not syncing
 kubectl describe application yourinfo -n argocd
