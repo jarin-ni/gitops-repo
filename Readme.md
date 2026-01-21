@@ -22,7 +22,7 @@ to Kubernetes and expose it securely via **Traefik + Let’s Encrypt**.
 
 ## 🧠 Architecture Overview
 
-```text
+
 Argo CD (namespace: argocd)
 └── Application: yourinfo
 └── Namespace: yourinfo
@@ -50,7 +50,7 @@ Argo CD (namespace: argocd)
 │
 └── README.md
 
-```text
+
 ---
 
 ## 🔐 Argo CD Project
