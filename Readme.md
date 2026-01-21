@@ -24,11 +24,11 @@ to Kubernetes and expose it securely via **Traefik + Let’s Encrypt**.
 
 ```text
 Argo CD (namespace: argocd)
--- Application: yourinfo
-    -- Namespace: yourinfo
-        |-- Deployment (Docker image: smileshosting/yourinfo)
-        |-- Service (ClusterIP)
-        `-- Ingress (Traefik + TLS)
+└── Application: yourinfo
+└── Namespace: yourinfo
+├── Deployment (Docker image: smileshosting/yourinfo)
+├── Service (ClusterIP)
+└── Ingress (Traefik + TLS)
 
 - Argo CD manages **all Kubernetes resources**
 - Git is the **single source of truth**
